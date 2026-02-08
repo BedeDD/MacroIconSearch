@@ -12,3 +12,13 @@ Features:
 - **Icon ID input** - Enter a numeric icon ID directly to set a specific icon
 - **Equipment manager support** - Works in both the macro UI and the gear manager icon picker
 - **MacroSetup compatibility** - Integrates with the MacroSetup addon if installed
+
+## Manual Installation
+
+1. Download or clone this repository
+2. Copy the following files into `World of Warcraft/_retail_/Interface/AddOns/MacroIconSearch/`:
+   - `MacroIconSearch.toc`
+   - `MacroIconSearch.xml`
+   - `Core.lua`
+   - `icon.tga`
+3. Restart WoW or reload the addon list
