@@ -7,4 +7,5 @@
 ## X-Curse-Project-ID: 912182
 
 MacroIconSearch.xml
+IconData.lua
 Core.lua

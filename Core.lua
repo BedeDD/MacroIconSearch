@@ -51,9 +51,29 @@ local function UpdateIcons()
     tinsert(icons, [[INTERFACE\ICONS\INV_MISC_QUESTIONMARK]])
 
     local exactMatch = searchQuery:find("\"$", 1)
+    local query = searchQuery:lower()
+    local queryClean = exactMatch and searchQuery:sub(1, exactMatch - 1) or nil
+
+    -- Search spell name cache
     for name, icon in pairs(MIS.GetIconCache()) do
-        if (exactMatch and name == searchQuery:sub(1, exactMatch - 1)) or name:lower():find(searchQuery:lower(), 1, true) then
+        if (exactMatch and name == queryClean) or name:lower():find(query, 1, true) then
             tinsert(icons, icon)
+        end
+    end
+
+    -- Search icon filename database
+    if MIS.IconFileNames then
+        local seen = {}
+        -- Mark icons already added from spell search to avoid duplicates
+        for i = 2, #icons do
+            seen[icons[i]] = true
+        end
+        for filename, fileDataID in pairs(MIS.IconFileNames) do
+            if not seen[fileDataID] then
+                if (exactMatch and filename == queryClean) or filename:find(query, 1, true) then
+                    tinsert(icons, fileDataID)
+                end
+            end
         end
     end
 end
