@@ -1,6 +1,7 @@
 ## Interface: 120000
 ## Title: MacroIconSearch
 ## Author: Permok
+## IconTexture: Interface\AddOns\MacroIconSearch\icon
 ## Dependencies: Blizzard_MacroUI
 ## OptionalDeps: MacroSetup
 ## X-Curse-Project-ID: 912182

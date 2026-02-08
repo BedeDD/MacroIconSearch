@@ -6,7 +6,7 @@ local searchQuery = ""
 local icons = {}
 
 EventUtil.ContinueOnAddOnLoaded(addonName, function()
-    if not IsAddOnLoaded("MacroSetup") then
+    if not C_AddOns.IsAddOnLoaded("MacroSetup") then
         MIS:BuildIconCache()
     else
         MIS.GetIconCache = MacroSetup.GetIconCache
