@@ -128,7 +128,11 @@ do
             local misses = 0
             while misses < 80000 do
                 id = id + 1
-                local name, _, icon = GetSpellInfo(id)
+                local spellInfo = C_Spell.GetSpellInfo(id)
+                local name, icon
+                if spellInfo then
+                    name, icon = spellInfo.name, spellInfo.iconID
+                end
 
                 if icon == 136243 then
                     misses = 0;
